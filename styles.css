@@ -28,9 +28,27 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     color: var(--text-primary);
-    background-color: var(--bg-primary);
+    background: #fafafa;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Global mesh gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 50%);
+    z-index: -2;
+    pointer-events: none;
 }
 
 .container {
@@ -132,6 +150,7 @@ body {
     justify-content: center;
     padding: 8rem 0 4rem;
     overflow: hidden;
+    background: transparent;
 }
 
 .hero-background {
@@ -140,88 +159,141 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
 }
 
-.gradient-orb {
+/* Mesh gradient background - now on body::before */
+.mesh-gradient {
+    display: none;
+}
+
+/* Floating shapes */
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
-    animation: float 20s infinite ease-in-out;
+    opacity: 0.6;
 }
 
-.orb-1 {
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    top: -200px;
-    left: -200px;
-    animation-delay: 0s;
-}
-
-.orb-2 {
+.shape-1 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    bottom: -150px;
-    right: -150px;
-    animation-delay: 5s;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+    top: -100px;
+    right: -100px;
+    animation: float-slow 20s ease-in-out infinite;
 }
 
-.orb-3 {
+.shape-2 {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-    top: 50%;
-    right: 10%;
-    animation-delay: 10s;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.1));
+    bottom: -50px;
+    left: -50px;
+    animation: float-slow 25s ease-in-out infinite reverse;
 }
 
-@keyframes float {
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(99, 102, 241, 0.1));
+    top: 30%;
+    left: 10%;
+    animation: float-medium 15s ease-in-out infinite;
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(236, 72, 153, 0.1));
+    bottom: 30%;
+    right: 15%;
+    animation: float-medium 18s ease-in-out infinite reverse;
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(5deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+}
+
+@keyframes float-medium {
     0%, 100% {
         transform: translate(0, 0) scale(1);
     }
-    33% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
+    50% {
+        transform: translate(20px, -20px) scale(1.1);
     }
 }
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     z-index: 1;
+    padding: 0 1rem;
+}
+
+/* Hero Eyebrow */
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.eyebrow-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    line-height: 1.15;
+}
+
+.title-highlight {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.1;
-}
-
-.hero-tagline {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
 }
 
 .hero-description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
 .hero-buttons {
@@ -229,6 +301,53 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.hero .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.hero-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(180deg, transparent, var(--border-color), transparent);
 }
 
 .btn {
@@ -272,6 +391,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 1;
 }
 
 .mouse {
@@ -367,7 +487,7 @@ section {
 
 /* About Section */
 .about {
-    background: var(--bg-secondary);
+    background: transparent;
 }
 
 .about-content {
@@ -467,7 +587,7 @@ section {
 
 /* Projects Section */
 .projects {
-    background: var(--bg-primary);
+    background: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -793,7 +913,7 @@ section {
 
 /* Founders Section */
 .founders {
-    background: var(--bg-secondary);
+    background: transparent;
 }
 
 .founders-content {
@@ -973,7 +1093,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: var(--bg-secondary);
+    background: transparent;
 }
 
 .contact-content {
@@ -1150,6 +1270,30 @@ section {
         padding: 6rem 0 3rem;
     }
 
+    .hero-eyebrow {
+        gap: 0.75rem;
+    }
+
+    .eyebrow-line {
+        width: 25px;
+    }
+
+    .eyebrow-text {
+        font-size: 0.75rem;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+
+    .hero-stat-number {
+        font-size: 2rem;
+    }
+
+    .hero-stat-divider {
+        height: 40px;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: stretch;
@@ -1157,6 +1301,7 @@ section {
 
     .btn {
         text-align: center;
+        justify-content: center;
     }
 
     .contact-content {
@@ -1172,13 +1317,6 @@ section {
     .footer-links {
         justify-content: center;
     }
-
-    .orb-1,
-    .orb-2,
-    .orb-3 {
-        width: 300px;
-        height: 300px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1193,5 +1331,24 @@ section {
     .about-features,
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-stat-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    }
+
+    .hero-stat-number {
+        font-size: 1.75rem;
+    }
+
+    .hero-stat-label {
+        font-size: 0.8rem;
     }
 }
