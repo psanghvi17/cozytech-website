@@ -651,6 +651,11 @@ section {
     color: white;
 }
 
+.badge-crm {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
 .project-description {
     font-size: 0.9375rem;
     line-height: 1.6;
