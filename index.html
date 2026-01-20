@@ -133,175 +133,260 @@
         </section>
 
         <section id="projects" class="projects">
+            <div class="projects-background">
+                <div class="projects-orb projects-orb-1"></div>
+                <div class="projects-orb projects-orb-2"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Our Projects</h2>
                     <p class="section-subtitle">Building innovative solutions that make technology cozy</p>
                 </div>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
+                    <div class="project-card" data-category="ai-ml">
+                        <div class="project-graphic">
+                            <svg class="project-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="80" fill="url(#grad1)" opacity="0.2"/>
+                                <path d="M 50 100 Q 100 50, 150 100 T 50 100" fill="none" stroke="url(#grad1)" stroke-width="3"/>
+                                <circle cx="100" cy="100" r="20" fill="url(#grad1)"/>
+                            </svg>
+                        </div>
+                        <div class="project-icon-wrapper">
                             <div class="project-icon">🤖</div>
+                        </div>
+                        <div class="project-header">
                             <h3>Revenue Assistant</h3>
-                            <span class="project-badge">AI/ML</span>
+                            <span class="project-badge badge-ai">AI/ML</span>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">
-                                An intelligent RAG (Retrieval-Augmented Generation) system that enables semantic search and natural language Q&A over regulatory data, transforming how users interact with complex compliance information.
-                            </p>
-                            <div class="project-details">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Semantic search capabilities using vector embeddings</li>
-                                    <li>Natural language question-answering powered by OpenAI</li>
-                                    <li>Large-scale data pipeline for web scraping and processing</li>
-                                    <li>Intelligent document chunking and embedding generation</li>
-                                    <li>Grounded AI responses with source document retrieval</li>
-                                </ul>
-                                <h4>Technology Stack</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">OpenAI APIs</span>
-                                    <span class="tech-tag">Supabase</span>
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">pgvector</span>
-                                    <span class="tech-tag">RAG Pipeline</span>
-                                    <span class="tech-tag">Vector Search</span>
-                                </div>
-                                <h4>Impact</h4>
-                                <p>Enables users to quickly find and understand complex regulatory information through conversational AI, significantly reducing research time and improving accuracy.</p>
+                        <p class="project-description">
+                            An intelligent RAG system enabling semantic search and natural language Q&A over regulatory data.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔍</span>
+                                <span>Semantic Search</span>
                             </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">💬</span>
+                                <span>AI Q&A</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📊</span>
+                                <span>Vector DB</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-item">OpenAI</span>
+                            <span class="tech-item">Supabase</span>
+                            <span class="tech-item">pgvector</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status">🟢 Production</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
+                    <div class="project-card" data-category="saas">
+                        <div class="project-graphic">
+                            <svg class="project-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="40" y="40" width="120" height="120" rx="10" fill="url(#grad2)" opacity="0.2"/>
+                                <rect x="60" y="60" width="80" height="80" rx="5" fill="none" stroke="url(#grad2)" stroke-width="3"/>
+                                <rect x="80" y="80" width="40" height="40" fill="url(#grad2)"/>
+                            </svg>
+                        </div>
+                        <div class="project-icon-wrapper">
                             <div class="project-icon">💼</div>
+                        </div>
+                        <div class="project-header">
                             <h3>RecruitPro</h3>
-                            <span class="project-badge">SaaS</span>
+                            <span class="project-badge badge-saas">SaaS</span>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">
-                                A comprehensive SaaS platform designed to meet the end-to-end needs of recruitment firms, serving 550+ active users with scalable backend infrastructure and powerful reporting capabilities.
-                            </p>
-                            <div class="project-details">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Complete recruitment workflow management</li>
-                                    <li>Advanced reporting and analytics dashboard</li>
-                                    <li>Scalable backend architecture handling high traffic</li>
-                                    <li>User management and role-based access control</li>
-                                    <li>Real-time data processing and updates</li>
-                                </ul>
-                                <h4>Technology Stack</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">RESTful API</span>
-                                    <span class="tech-tag">Microservices</span>
-                                    <span class="tech-tag">Cloud Infrastructure</span>
-                                </div>
-                                <h4>Impact</h4>
-                                <p>Streamlines recruitment operations for hundreds of firms, reducing manual work and improving efficiency through automated workflows and comprehensive reporting.</p>
+                        <p class="project-description">
+                            Comprehensive SaaS platform for recruitment firms with 550+ active users and scalable infrastructure.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">550+</div>
+                                <div class="stat-label">Active Users</div>
                             </div>
+                        </div>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">👥</span>
+                                <span>Workflow Management</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📈</span>
+                                <span>Analytics Dashboard</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <span>Real-time Processing</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Microservices</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status">🟢 Production</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
+                    <div class="project-card" data-category="integration">
+                        <div class="project-graphic">
+                            <svg class="project-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <polygon points="100,30 170,100 100,170 30,100" fill="url(#grad3)" opacity="0.2"/>
+                                <polygon points="100,60 140,100 100,140 60,100" fill="none" stroke="url(#grad3)" stroke-width="3"/>
+                                <circle cx="100" cy="100" r="15" fill="url(#grad3)"/>
+                            </svg>
+                        </div>
+                        <div class="project-icon-wrapper">
                             <div class="project-icon">🌐</div>
+                        </div>
+                        <div class="project-header">
                             <h3>Customwise</h3>
-                            <span class="project-badge">Integration</span>
+                            <span class="project-badge badge-integration">Integration</span>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">
-                                A specialized platform enabling customs brokers to seamlessly interact with multiple customs agencies (HMRC, Revenue Ireland) for managing incoming and outgoing consignments through standardized XML-based transactions.
-                            </p>
-                            <div class="project-details">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Multi-agency integration (HMRC, Revenue Ireland)</li>
-                                    <li>SOAP/XML-based transaction processing</li>
-                                    <li>Safety and Security module integration</li>
-                                    <li>Real-time consignment tracking</li>
-                                    <li>Automated compliance checking</li>
-                                </ul>
-                                <h4>Technology Stack</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">SOAP</span>
-                                    <span class="tech-tag">XML</span>
-                                    <span class="tech-tag">API Integration</span>
-                                    <span class="tech-tag">HMRC Systems</span>
-                                    <span class="tech-tag">Security Modules</span>
-                                </div>
-                                <h4>Impact</h4>
-                                <p>Simplifies complex customs processes by providing a unified interface for multiple agencies, reducing errors and processing time for customs brokers.</p>
+                        <p class="project-description">
+                            Platform enabling customs brokers to interact with multiple agencies (HMRC, Revenue Ireland) via XML transactions.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔗</span>
+                                <span>Multi-agency Integration</span>
                             </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔒</span>
+                                <span>Security Module</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📦</span>
+                                <span>Real-time Tracking</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-item">SOAP</span>
+                            <span class="tech-item">XML</span>
+                            <span class="tech-item">HMRC API</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status">🟢 Production</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
+                    <div class="project-card" data-category="hr-tech">
+                        <div class="project-graphic">
+                            <svg class="project-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="70" r="30" fill="url(#grad4)" opacity="0.3"/>
+                                <path d="M 50 120 Q 100 140, 150 120" fill="none" stroke="url(#grad4)" stroke-width="4"/>
+                                <rect x="70" y="150" width="60" height="30" rx="5" fill="url(#grad4)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <div class="project-icon-wrapper">
                             <div class="project-icon">👥</div>
-                            <h3>Evaulate</h3>
-                            <span class="project-badge">HR Tech</span>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">
-                                A comprehensive employee management system that facilitates seamless onboarding, performance evaluation, and automated report generation, empowering HR teams with powerful administrative tools.
-                            </p>
-                            <div class="project-details">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Streamlined employee onboarding workflows</li>
-                                    <li>Performance evaluation and review management</li>
-                                    <li>Automated report generation</li>
-                                    <li>Admin dashboard for user management</li>
-                                    <li>Document management and tracking</li>
-                                </ul>
-                                <h4>Technology Stack</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Express.js</span>
-                                    <span class="tech-tag">App Connect</span>
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">REST API</span>
-                                    <span class="tech-tag">Report Generation</span>
-                                </div>
-                                <h4>Impact</h4>
-                                <p>Transforms HR operations by automating routine tasks, enabling faster onboarding, structured performance reviews, and data-driven decision making through comprehensive reporting.</p>
+                        <div class="project-header">
+                            <h3>Evaulate</h3>
+                            <span class="project-badge badge-hr">HR Tech</span>
+                        </div>
+                        <p class="project-description">
+                            Employee management system for onboarding, performance evaluation, and automated reporting.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🚀</span>
+                                <span>Onboarding</span>
                             </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📊</span>
+                                <span>Performance Reviews</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📄</span>
+                                <span>Auto Reports</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-item">Express.js</span>
+                            <span class="tech-item">App Connect</span>
+                            <span class="tech-item">PostgreSQL</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status">🟢 Production</span>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-icon">⚙️</div>
-                            <h3>Augmented Automation</h3>
-                            <span class="project-badge">Automation</span>
+                    <div class="project-card" data-category="automation">
+                        <div class="project-graphic">
+                            <svg class="project-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="60" fill="none" stroke="url(#grad5)" stroke-width="3" opacity="0.3"/>
+                                <circle cx="100" cy="100" r="40" fill="none" stroke="url(#grad5)" stroke-width="3" opacity="0.5"/>
+                                <circle cx="100" cy="100" r="20" fill="url(#grad5)"/>
+                                <path d="M 100 40 L 100 20 M 100 160 L 100 180 M 40 100 L 20 100 M 160 100 L 180 100" stroke="url(#grad5)" stroke-width="2" opacity="0.5"/>
+                            </svg>
                         </div>
-                        <div class="project-content">
-                            <p class="project-description">
-                                An end-to-end service automation platform built using microservices architecture, designed to streamline complex business processes and reduce operational overhead through intelligent automation.
-                            </p>
-                            <div class="project-details">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Microservices-based architecture for scalability</li>
-                                    <li>End-to-end process automation</li>
-                                    <li>Service orchestration and workflow management</li>
-                                    <li>High availability and fault tolerance</li>
-                                    <li>Integration with multiple service management tools</li>
-                                </ul>
-                                <h4>Technology Stack</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Microservices</span>
-                                    <span class="tech-tag">Service Orchestration</span>
-                                    <span class="tech-tag">API Gateway</span>
-                                    <span class="tech-tag">Containerization</span>
-                                    <span class="tech-tag">High Availability</span>
-                                </div>
-                                <h4>Impact</h4>
-                                <p>Reduces operational complexity by automating repetitive tasks and service workflows, enabling organizations to focus on strategic initiatives while maintaining high system reliability.</p>
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">⚙️</div>
+                        </div>
+                        <div class="project-header">
+                            <h3>Augmented Automation</h3>
+                            <span class="project-badge badge-automation">Automation</span>
+                        </div>
+                        <p class="project-description">
+                            End-to-end service automation platform using microservices to streamline business processes.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔧</span>
+                                <span>Microservices</span>
                             </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔄</span>
+                                <span>Process Automation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🛡️</span>
+                                <span>High Availability</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-item">Microservices</span>
+                            <span class="tech-item">Orchestration</span>
+                            <span class="tech-item">API Gateway</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-status">🟢 Production</span>
                         </div>
                     </div>
                 </div>
